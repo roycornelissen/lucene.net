@@ -21,6 +21,7 @@
 
 using System;
 using System.Configuration;
+using MonoTouch.Foundation;
 
 namespace Lucene.Net.Support
 {
@@ -30,6 +31,15 @@ namespace Lucene.Net.Support
     public class AppSettings
     {
         static System.Collections.Specialized.ListDictionary settings = new System.Collections.Specialized.ListDictionary();
+
+#if XAMARIN_IOS
+		static NSUserDefaults _userPreferences = NSUserDefaults.StandardUserDefaults;
+
+		static AppSettings()
+		{
+			_userPreferences.Synchronize ();
+		}
+#endif
 
         /// <summary>
         /// 
@@ -84,7 +94,12 @@ namespace Lucene.Net.Support
                 return (int)settings[key];
             }
 
-            System.String theValue = ConfigurationManager.AppSettings.Get(key);
+#if XAMARIN_IOS
+			var theValue = _userPreferences.StringForKey(key);
+#else
+			System.String theValue = ConfigurationManager.AppSettings.Get(key);
+#endif
+
             if (theValue == null)
             {
                 return defValue;
@@ -107,8 +122,13 @@ namespace Lucene.Net.Support
                 return (long)settings[key];
             }
 
-            System.String theValue = ConfigurationManager.AppSettings.Get(key);
-            if (theValue == null)
+#if XAMARIN_IOS
+			var theValue = _userPreferences.StringForKey(key);
+#else
+			System.String theValue = ConfigurationManager.AppSettings.Get(key);
+#endif
+
+			if (theValue == null)
             {
                 return defValue;
             }
@@ -130,8 +150,13 @@ namespace Lucene.Net.Support
                 return (System.String)settings[key];
             }
 
-            System.String theValue = ConfigurationManager.AppSettings.Get(key);
-            if (theValue == null)
+#if XAMARIN_IOS
+			var theValue = _userPreferences.StringForKey(key);
+#else
+			System.String theValue = ConfigurationManager.AppSettings.Get(key);
+#endif
+
+			if (theValue == null)
             {
                 return defValue;
             }
@@ -146,8 +171,13 @@ namespace Lucene.Net.Support
                 return (bool)settings[key];
             }
 
-            System.String theValue = ConfigurationManager.AppSettings.Get(key);
-            if (theValue == null)
+#if XAMARIN_IOS
+			var theValue = _userPreferences.StringForKey(key);
+#else
+			System.String theValue = ConfigurationManager.AppSettings.Get(key);
+#endif
+
+			if (theValue == null)
             {
                 return defValue;
             }
