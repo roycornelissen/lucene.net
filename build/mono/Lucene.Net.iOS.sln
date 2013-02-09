@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucene.Net.iOS", "core\Lucene.Net.iOS.csproj", "{86CE8550-7024-4257-958D-419C0D2305B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucene.Net.iOS", "..\..\src\core\Lucene.Net.iOS.csproj", "{86CE8550-7024-4257-958D-419C0D2305B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndexAndQuery.iOS", "demo\IndexAndQuery.iOS\IndexAndQuery.iOS.csproj", "{4D369AD7-59EC-451F-81E2-8E1050B36791}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndexAndQuery.iOS", "..\..\src\demo\IndexAndQuery.iOS\IndexAndQuery.iOS.csproj", "{4D369AD7-59EC-451F-81E2-8E1050B36791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +51,6 @@ Global
 		{86CE8550-7024-4257-958D-419C0D2305B3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = demo\IndexAndQuery.iOS\IndexAndQuery.iOS.csproj
+		StartupItem = ..\..\src\demo\IndexAndQuery.iOS\IndexAndQuery.iOS.csproj
 	EndGlobalSection
 EndGlobal
