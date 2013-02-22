@@ -1,3 +1,12 @@
+NOTE: this port has been moved to https://github.com/infosupport/lucene.net. You'll find a unified Android 
+and iOS port over there.
+
+I'll remove this repo shortly.
+
+
+======================
+
+
 Apache Lucene.Net README file
 
 
